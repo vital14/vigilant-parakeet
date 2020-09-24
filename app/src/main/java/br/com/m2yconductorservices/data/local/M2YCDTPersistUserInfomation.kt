@@ -220,10 +220,10 @@ object M2YCDTPersistUserInformation {
         return persistedUser?.has_cards == true
     }
 
-    fun hasUnpaidTickets() = persistedUser?.has_unpaid_tickets == true
-    fun hasUnpaidTickets(hasUnpaidTickets: Boolean): Boolean {
-        persistedUser?.has_unpaid_tickets = hasUnpaidTickets
-        return persistedUser?.has_unpaid_tickets == true
+    fun hasActivePlan() = persistedUser?.has_active_plan == true
+    fun hasActivePlan(hasActivePlan: Boolean): Boolean {
+        persistedUser?.has_active_plan = hasActivePlan
+        return persistedUser?.has_active_plan == true
     }
 
     fun isCdtTokenInvalid(): Boolean {
