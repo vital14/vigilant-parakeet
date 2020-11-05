@@ -185,14 +185,15 @@ fun BarcodeValidationResponse.toPaymentModel(): PaymentModel {
                 null,
                 null,
                 null,
-                null, null
+                null,
+                null
             )
         Result?.BillPaymentTypeId == BillPaymentType.NPC.serverId ->
             return PaymentModel(
                 Result?.PaymentInfoNPC?.ComputedBillValues?.TotalAmountToCharge,
                 Result?.PaymentInfoNPC?.ComputedBillValues?.TotalAmountToCharge,
+                Result?.PaymentInfoNPC?.DigitavelLine,
                 Result?.ValidateBarCode?.Description,
-                Result?.PaymentInfoNPC?.Traders?.Recipient,
                 Result?.PaymentInfoNPC?.Traders?.Recipient,
                 Result?.PaymentInfoNPC?.Traders?.RecipientDocument,
                 Result?.PaymentInfoNPC?.ComputedBillValues?.DiscountValueCalculated,
@@ -215,13 +216,15 @@ fun BarcodeValidationResponse.toPaymentModel(): PaymentModel {
                 true,
                 Result?.PaymentInfoNPC?.OpeningPaymentschedule,
                 Result?.PaymentInfoNPC?.ClosingPaymentschedule,
-                Result?.PaymentInfoNPC?.IsValidWindow, null, null
+                Result?.PaymentInfoNPC?.IsValidWindow,
+                null,
+                null
             )
         else -> return PaymentModel(
             Result?.PaymentInfoNPC?.BillValue,
             Result?.PaymentInfoNPC?.ComputedBillValues?.TotalAmountToCharge,
+            Result?.PaymentInfoNPC?.DigitavelLine,
             Result?.ValidateBarCode?.Description,
-            Result?.PaymentInfoNPC?.Traders?.Recipient,
             Result?.PaymentInfoNPC?.Traders?.Recipient,
             Result?.PaymentInfoNPC?.Traders?.RecipientDocument,
             Result?.PaymentInfoNPC?.ComputedBillValues?.DiscountValueCalculated,
@@ -245,7 +248,9 @@ fun BarcodeValidationResponse.toPaymentModel(): PaymentModel {
             null,
             null,
             null,
-            null, null, null
+            null,
+            null,
+            null
         )
     }
 

@@ -36,6 +36,7 @@ data class PaymentInfoNPCResponse(
     val IsValidWindow: Boolean?,
     val NextUtilDay: String?,
     val BarCodeNumber: String?,
+    val DigitavelLine: String?,
     val Traders: TradersResponse?,
     val ReceivingDivergentValue: ReceivingDivergentValueResponse?,
     val ReceiptRules: ReceiptRulesResponse?,
