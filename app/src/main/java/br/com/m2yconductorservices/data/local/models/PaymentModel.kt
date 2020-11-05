@@ -192,7 +192,7 @@ fun BarcodeValidationResponse.toPaymentModel(): PaymentModel {
             return PaymentModel(
                 Result?.PaymentInfoNPC?.ComputedBillValues?.TotalAmountToCharge,
                 Result?.PaymentInfoNPC?.ComputedBillValues?.TotalAmountToCharge,
-                Result?.PaymentInfoNPC?.DigitavelLine,
+                Result?.PaymentInfoNPC?.BarCodeNumber,
                 Result?.ValidateBarCode?.Description,
                 Result?.PaymentInfoNPC?.Traders?.Recipient,
                 Result?.PaymentInfoNPC?.Traders?.RecipientDocument,
@@ -223,7 +223,7 @@ fun BarcodeValidationResponse.toPaymentModel(): PaymentModel {
         else -> return PaymentModel(
             Result?.PaymentInfoNPC?.BillValue,
             Result?.PaymentInfoNPC?.ComputedBillValues?.TotalAmountToCharge,
-            Result?.PaymentInfoNPC?.DigitavelLine,
+            Result?.PaymentInfoNPC?.BarCodeNumber,
             Result?.ValidateBarCode?.Description,
             Result?.PaymentInfoNPC?.Traders?.Recipient,
             Result?.PaymentInfoNPC?.Traders?.RecipientDocument,
