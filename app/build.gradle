@@ -28,9 +28,9 @@ android {
     defaultConfig {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 4400
+        versionCode 4500
         multiDexEnabled true
-        versionName "0.4.4"
+        versionName "0.4.5"
         vectorDrawables.useSupportLibrary true
     }
 
