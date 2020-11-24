@@ -136,22 +136,18 @@ fun Transferp2pResponse.toReceiptModel(): ReceiptModel {
 }
 
 fun PaymentTicketResponse.toReceiptModel(): ReceiptModel {
-    var cpfOrCnpj: String? = null
     var date: String? = null
     this.jsonObject?.let {
-        cpfOrCnpj = it.cpfOrCNPJ
         date =
             it.paymentDate?.m2yCdtChangeDateFormat(M2YCDTConstants.CDT_DATE_FORMAT, M2YCDTConstants.RECEIPT_DATE_FORMAT)
     } ?: run {
-        cpfOrCnpj = description
         date = dueDate.m2yCdtChangeDateFormat(M2YCDTConstants.CDT_DATE_FORMAT, M2YCDTConstants.RECEIPT_DATE_FORMAT)
     }
 
     val payment = ReceiptPaymentModel(
         barCode, jsonObject?.name ?: "", jsonObject?.expiration
             ?: "", jsonObject?.paymentDate ?: "",
-        jsonObject?.discount, jsonObject?.fine, jsonObject?.charges, jsonObject?.interest, cpfOrCnpj
-            ?: "", date ?: "", amount, account?.toInt().toString()
+        jsonObject?.discount, jsonObject?.fine, jsonObject?.charges, jsonObject?.interest, "", "", amount, account?.toInt().toString()
     )
 
     return ReceiptModel(

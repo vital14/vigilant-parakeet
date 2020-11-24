@@ -29,7 +29,7 @@ class PaymentTicketResponse(var id: Int?,
             return try {
                 Gson().fromJson(description, PaymentTicketJson::class.java)
             } catch (ex: Exception) {
-                PaymentTicketJson(null, null, description, null, null, null, null, null, null, null, null)
+                PaymentTicketJson(null, null, description, null, null, null, null, null, null, null)
             }
         }
 
@@ -38,7 +38,6 @@ class PaymentTicketResponse(var id: Int?,
             var bank: String?,
             var name: String?,
             var socialReason: String?,
-            var cpfOrCNPJ: String?,
             var discount: Float?,
             var interest: Float?,
             var fine: Float?,
